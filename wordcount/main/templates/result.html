@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자수세기 결과</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<style>
+    body{
+        font-family: 'NanumBarunGothic';
+        background-color: #FAFAFA;
+        margin:0;
+        font-weight: bold;
+    }
+    p{
+        margin-block-end: 0;
+    }
+    .logo{
+        height: 2.9rem;
+        width: 2.3rem;
+        margin-left: 7.9rem;
+        float: left;
+        color: #01cb00;
+        margin-top: 1.1rem;
+        margin-bottom: 0;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    h1{
+        display:inline-block;
+        
+        margin-block-start: 0.8rem;
+    }
+    .logo_print{
+        font-size: 20px;
+        float:left;
+        display:inline-block;
+        margin-left:1rem;
+        margin-right:24rem;
+        margin-top:1.4rem;
+        
+    }
+    .logo_search{
+        display: inline-block;
+        height: 3.3rem;
+        width: 8rem;
+        background-image: url("Image/N2.png");
+        margin-top: 0.5rem;
+    }
+    .head{
+        display:block;
+        height: 4.1rem;
+        border-bottom: 1px solid #2DB400;
+        background-color: #fff;
+    }
+    
+    .middle{
+        height: 2.8rem;
+        width:300rem;
+        box-shadow: 0 4px 20px -4px #dddddd;
+        background-color: #fff;
+        clear: both;
+        position:absolute;
+        
+        
+    }
+    .menu_ul{
+        background-color: #fff;
+        margin-block-start: 0;
+        margin-top: 12px;
+        display:block;
+        margin-left:7.8rem;
+    }
+    .menu{
+        list-style-type: none;
+        display: flex;
+        float: left;
+        margin-right: 1.5rem;
+        margin-top: 0.1rem;
+        cursor: pointer;
+        font-size:14px;
+        font-weight: lighter;
+    }
+    
+    
+    .green{
+        color: #2DB400;
+    }
+    
+    /* 워드카운터 본체 */
+    textarea{
+        resize: none;
+    }
+    .container{
+    
+        position:static;
+        margin-top: 5rem;
+        border: 1px solid #e8ebee;
+        border-radius: 6px;
+        height: 550px;
+        width: 672px;
+        background-color: #fff;
+        margin-bottom: 3rem;
+    }
+    .header{
+        padding:0 1.5rem 0 1.5rem;
+        border:1px solid #eff2f4;
+        height: 49px
+    }
+    h4{
+        height: 49px;
+        margin:0;
+        display: inline-block;
+        padding-top:1rem;
+    }
+    .api{
+        height: 350px;
+        width: 632px;
+        margin:0 20px 0 20px;
+    }
+    .countword{
+        margin-top: 20px;
+        width: 630px;
+        height: 251px;
+        border:1px solid #f0f0f0;
+    }
+    .box1{
+        height: 173px;
+        border-bottom:1px solid #f0f0f0;
+    }
+    
+    .more{
+        height: 33px;
+        font-size:13px;
+        margin-top:1rem;
+    }
+    .blue{
+        color:#00f;
+        margin-left: 1rem;
+    }
+    textarea{
+        width: 582px;
+        height: 125px;
+        border: none;
+        padding:1.5rem;
+    }
+    .set{
+        display:flex;
+        flex-direction: column;
+        margin-left: 7rem;
+    }
+    ul{
+        margin-top:6px;
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    /* result */
+    .api{
+        overflow: auto;
+        height: 480px;
+        font-weight: lighter;
+    }
+    .result{
+        text-align: center;
+    }
+    a{
+        float: right;
+        margin-top: 11px;
+        text-decoration: none;
+        padding: 6px;
+        background-color: #cccccc;
+        color:#000;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+    a:hover{
+        background-color: #bbbbbb;
+    }
+</style>
+<body>
+
+    <div class="head">
+        <h1 class = "logo">N</h1>
+        <p class="logo_print">글자수 세기</p>
+        <!-- <p class="logo_search"></p> -->
+        <img src="Image/N2.png" alt="" class="logo_search">
+
+    </div>
+    <div class="middle">
+        <ul class="menu_ul">
+            <li class="green menu">통합</li>
+            <li class="menu">VEIW</li>
+            <li class="menu">이미지</li>
+            <li class="menu" >지식in</li>
+            <li class="menu" >인플루언서</li>
+            <li class="menu" >동영상</li>
+            <li class="menu" >쇼핑</li>
+            <li class="menu" >뉴스</li>
+            <li class="menu" >어학사전</li>
+        </ul>
+
+    </div>
+
+    <div class="set">
+        <div class="container">
+            <div class="header">
+                <h4>글자수세기 결과</h4>
+                <a href = {% url 'main' %} >메인으로</a>
+            </div>
+            
+            <div class="api">
+                <br>
+                
+                <div class="result">
+                    {% for word,value in words %}
+                     {{word}} 의 개수 : {{value}}
+                    <br/>
+                    {% endfor %}
+                </div>
+                
+
+            </div>
+
+        </div>        
+    </div>
+
+</body>
+<footer>
+    <div class="finish">
+        
+    </div>
+</footer>
+</html>
+
+
+
+
+

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        background-color: #FAFAFA;
+        font-family: 'NanumBarunGothic';
+        margin:0;
+        font-weight: bold;
+    }
+    p{
+        margin-block-end: 0;
+    }
+    .logo{
+        height: 2.9rem;
+        width: 2.3rem;
+        margin-left: 7.9rem;
+        float: left;
+        color: #01cb00;
+        margin-top: 1.1rem;
+        margin-bottom: 0;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    h1{
+        display:inline-block;
+        
+        margin-block-start: 0.8rem;
+    }
+    .logo_print{
+        font-size: 20px;
+        float:left;
+        display:inline-block;
+        margin-left:1rem;
+        margin-right:24rem;
+        margin-top:1.4rem;
+        
+    }
+    .logo_search{
+        display: inline-block;
+        height: 3.3rem;
+        width: 8rem;
+        background-image: url("Image/N2.png");
+        margin-top: 0.5rem;
+    }
+    .head{
+        display:block;
+        height: 4.1rem;
+        border-bottom: 1px solid #2DB400;
+        background-color: #fff;
+    }
+    
+    .middle{
+        height: 2.8rem;
+        width:300rem;
+        box-shadow: 0 4px 20px -4px #dddddd;
+        background-color: #fff;
+        clear: both;
+        position:absolute;
+        
+        
+    }
+    .menu_ul{
+        background-color: #fff;
+        margin-block-start: 0;
+        margin-top: 12px;
+        display:block;
+        margin-left:7.8rem;
+    }
+    .menu{
+        list-style-type: none;
+        display: flex;
+        float: left;
+        margin-right: 1.5rem;
+        margin-top: 0.1rem;
+        cursor: pointer;
+        font-size:14px;
+        font-weight: lighter;
+    }
+    
+    
+    .green{
+        color: #01cb00;
+    }
+    
+    /* 워드카운터 본체 */
+    textarea{
+        resize: none;
+    }
+    .container{
+    
+        position:static;
+        margin-top: 5rem;
+        border: 1px solid #e8ebee;
+        border-radius: 6px;
+        height: 374px;
+        width: 672px;
+        background-color: #fff;
+        margin-bottom: 3rem;
+    }
+    .header{
+        padding:0 1.5rem 0 1.5rem;
+        border:1px solid #eff2f4;
+        height: 49px
+    }
+    h4{
+        height: 49px;
+        margin:0;
+        display : flex;
+        padding-top:1rem;
+    }
+    .api{
+        height: 350px;
+        width: 632px;
+        margin:0 20px 0 20px;
+    }
+    .countword{
+        margin-top: 20px;
+        width: 630px;
+        height: 251px;
+        border:1px solid #f0f0f0;
+    }
+    .box1{
+        height: 173px;
+        border-bottom:1px solid #f0f0f0;
+    }
+    
+    .more{
+        height: 33px;
+        font-size:13px;
+        margin-top:1rem;
+    }
+    .blue{
+        color:#0102b0;
+        margin-left: 1rem;
+    }
+    textarea{
+        width: 582px;
+        height: 125px;
+        border: none;
+        padding:1.5rem;
+    }
+    .set{
+        display:flex;
+        flex-direction: column;
+        margin-left: 7rem;
+    }
+    /* 그 밑.. 추가  */
+    .humanin{
+        width: 634px;
+        height:83px;
+        border:1px solid #e8ebee;
+        border-radius: 6px;
+        background-color: #fff;
+        margin-bottom: 1rem;
+        padding: 11px 20px 15px;
+        font-weight:lighter;
+    }
+    .imgbox{
+        display: inline-block;
+        height: 24px;
+    }
+    .humaninimg{
+        width: 0.9rem;
+        margin-right: 3px;
+        padding:7px 0 0 0;
+    }
+    .sub1{
+        color: gray;
+        margin-top: 2px;
+        display: inline-block;
+        /* padding:0 0 3px 0; */
+    }
+    .sub2{
+        margin-top: 7px;
+    
+    }
+    .sub2_2{
+        margin-top: 8.5px;
+    }
+    
+    .sub3{
+        margin-top: 13px;
+        font-size: 13px;
+    }
+    .sub4{
+        margin-top: 7px;
+        font-size: 13px;
+    }
+    .item{
+        float: left;
+        margin-right: 8px;
+        display:list-item;
+        list-style: none;
+        text-decoration: none;
+    }
+    .list_item{
+        height: 18px;
+        font-size: 12px;
+       
+    }
+    ul{
+        margin-top:6px;
+        margin-left:0;
+        padding-left: 0;
+    }
+    .humanin + .plus {
+        height: 110px;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    .link_size{
+        font-size: 12px;
+        color:#999999;
+    }
+    
+    /* 공백 포함..  공백 제외 ..*/
+    .box2{
+        padding: 15px 0 7px 19px;
+        height: 55px;
+    }
+    .title{
+        font-size: 12px;
+        font-weight: lighter;
+        margin-bottom: 0.5rem;
+    }
+    #counter{
+        font-size:27px;
+        color: #036fff;
+        font-weight: lighter;
+    }
+    .text1{
+        display:inline-block;
+        margin:0 11rem 0 0 ;
+    }
+    .text2{
+        display:inline-block;
+    }
+    #counter_remove{
+        font-size:27px;
+        color: #036fff;
+        font-weight: lighter;
+        
+    }
+    button{
+        border: 1px solid #f0f0f0;
+        padding:10px;
+        float:right;
+        margin: 0.2rem 1.5rem 0.6rem 0;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+    
+    button:hover{
+        background-color: #9d9d9d;
+        
+    }
+    a{
+        color: #0102b0;
+    }
+</style>
+
+<body>
+
+    <div class="head">
+        <h1 class = "logo">N</h1>
+        <p class="logo_print">글자수 세기</p>
+        <!-- <p class="logo_search"></p> -->
+        <img src="Image/N2.png" alt="" class="logo_search">
+
+    </div>
+    <div class="middle">
+        <ul class="menu_ul">
+            <li class="green menu">통합</li>
+            <li class="menu">VEIW</li>
+            <li class="menu">이미지</li>
+            <li class="menu" >지식in</li>
+            <li class="menu" >인플루언서</li>
+            <li class="menu" >동영상</li>
+            <li class="menu" >쇼핑</li>
+            <li class="menu" >뉴스</li>
+            <li class="menu" >어학사전</li>
+        </ul>
+
+    </div>
+
+    <div class="set">
+        <div class="container">
+            <div class="header">
+                <h4>글자수세기</h4>
+            </div>
+            <div class="api">
+                <div class="countword">
+                    <div class="box1">
+                        <form action={% url 'result' %} method="get">
+                            <textarea name = 'text' id = "text" placeholder="텍스트를 입력해주세요."></textarea>
+                            <button type="submit" class="submit">submit</button>
+                        </form>
+                    </div>
+                    <div class="box2">
+                        <div class="text1">
+                            <div class="title">공백 포함</div>
+                            <span id="counter">0</span>
+                        </div>
+                        <div class="text2">
+                            <div class="title">공백 제외</div>
+                            <span id="counter_remove">0</span>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="more">
+                    관련   <span class="blue"> 맞춤법 검사기</span>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            $('#text').keyup(function (e) {
+                // 공백 포함 
+                var content = $(this).val();
+                $('#counter').html(content.length);
+                // 공백 제거
+                var redex = /\s/ig; 
+                var blank = $(this).val().toString().replace(redex, "").length; 
+                $('#counter_remove').text(blank); 
+            });
+
+
+        </script>
+        <div class="humanin">
+            <div class="imgbox">
+                <img src="Image/humanin.png" alt="" class="humaninimg">
+            </div>
+            <div class="sub1 " >
+                <a href="https://www.saramin.co.kr/zf_user/tools/character-counter" target="_blank" class="link_size">www.saramin.co.kr › tools › character-counter</a>
+            </div>
+            <div class="sub2 ">
+                <a  href ="https://www.saramin.co.kr/zf_user/tools/character-counter" target="_blank" class="sub2_1" >글자수 세기-맞춤법 검사기 - 사람인</a>
+            </div>
+            <div class="sub3">
+                <p class="sub2_2">글자수 세기 맞춤법 검사기 | 이력서와 자기소개서의 글자수, 맟춤법을 확인 할 수 있는 검사기 - 사람인</p>
+            </div>
+        </div>
+        <div class="humanin plus">
+            <div class="imgbox">
+                <img src="Image/humanin2.png" alt="" class="humaninimg">
+            </div>
+            <div class="sub1 ">
+                <a href="https://lettercounter.net/" target="_blank" class="link_size">lettercounter.net</a>
+            </div>
+            <div class="sub2 ">
+                <a href ="https://lettercounter.net/" target="_blank" class="sub2_1">글자수세기</a>
+            </div>
+            <div class="list_item">
+                <ul>
+                    <li class="item ">
+                        <a href="https://lettercounter.net/%EC%98%81%EC%96%B4-%ED%95%9C%EA%B8%80-%EB%8B%A8%EC%96%B4%EC%88%98%EC%84%B8%EA%B8%B0/" class="item1">단어수세기</a>
+                    </li>
+                    <li class="item ">
+                        <a href="https://lettercounter.net/%EB%A7%9E%EC%B6%A4%EB%B2%95-%EA%B2%80%EC%82%AC%EA%B8%B0/" class="item1">맞춤법 검사기</a>
+                    </li>
+                    <li class="item ">
+                        <a href="https://lettercounter.net/%EC%96%B8%EC%96%B4%EB%B3%80%ED%99%98%EA%B8%B0/" class="item1">언어변환기</a>
+                        
+                    </li>
+                    <li class="item ">
+                        <a href="https://lettercounter.net/category/%EC%98%A8%EB%9D%BC%EC%9D%B8-seo-%EA%B8%80%EC%93%B0%EA%B8%B0-%EA%B0%80%EC%9D%B4%EB%93%9C/" class="item1">SEO 글쓰기 가이드</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub4">
+                <p class="sub2_2 mar">블로그 포스팅, 이력서, 자기소개서 작성을 잘 하기 위해서 필요한 글자수세기, 영어 단어수세기, 맞춤법검사기</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div class="finish">
+        
+    </div>
+</footer>
+</html>
